@@ -1,0 +1,19 @@
+version: "3.8"
+
+#para rodar os services abaixo
+#docker-compose up -d
+
+#para terminar os services abaixo
+#docker-compose down 
+
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb_container
+    restart: on-failure
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=aluradb
+    ports:
+      - "3306:3306"
+    
